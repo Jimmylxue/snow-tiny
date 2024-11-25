@@ -1,0 +1,7 @@
+{
+	"entry": "./assets",
+	"output": "./newAssets",
+	"diffCompress": true,
+	"flat": true,
+	"saveOther": true
+}
