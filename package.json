@@ -1,6 +1,6 @@
 {
 	"name": "snow-tiny",
-	"version": "0.0.6",
+	"version": "0.0.8",
 	"description": "压缩图片资源工具",
 	"main": "dist/snowtiny.cjs.prod.js",
 	"module": "dist/snowtiny.esm.prod.js",
@@ -14,7 +14,8 @@
 		"init": "tsc --init",
 		"dev": "node ./bin/index.js",
 		"build-d": "rollup -c",
-		"test-w": "jest --watch"
+		"test-w": "jest --watch",
+		"release": "standard-version"
 	},
 	"keywords": [
 		"image",
@@ -45,14 +46,15 @@
 		"@types/chalk": "2.2.0",
 		"@types/inquirer": "8.2.1",
 		"@types/jest": "^28.1.6",
-		"jest-environment-jsdom": "^29.3.1",
 		"@typescript-eslint/eslint-plugin": "^5.30.7",
 		"@typescript-eslint/parser": "^5.30.7",
 		"eslint": "^8.20.0",
+		"jest-environment-jsdom": "^29.3.1",
 		"prettier": "^2.7.1",
 		"rollup": "^2.64.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.32.1",
+		"standard-version": "^9.5.0",
 		"ts-jest": "^28.0.7",
 		"tslib": "^2.4.0"
 	}
