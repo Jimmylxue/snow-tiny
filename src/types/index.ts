@@ -39,10 +39,36 @@ export type TDetail = {
 }
 
 export type TSnowConfig = {
+	/**
+	 * 压缩入口
+	 */
 	entry: string
+	/**
+	 * 压缩出口
+	 */
 	output: string
-	diffCompress: boolean // diff压缩
-	flat: boolean
-	saveOther: boolean
-	include: string[]
+	/**
+	 * 文件递归压缩
+	 */
+	diffCompress?: boolean
+	/**
+	 * 平铺导出
+	 */
+	flat?: boolean
+	/**
+	 * 保存其他类型文件
+	 */
+	saveOther?: boolean
+	/**
+	 * 接受允许进行压缩的文件类型
+	 */
+	acceptPictureType?: string[]
+	/**
+	 * 文件压缩的 请求路径
+	 */
+	uploadPath?: string
+	/**
+	 * 文件压缩接口的 host
+	 */
+	hostname?: string[]
 }

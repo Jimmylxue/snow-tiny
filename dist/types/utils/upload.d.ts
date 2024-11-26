@@ -1,5 +1,6 @@
+import { TSnowConfig } from 'src/types';
 export declare function randomNum(min?: number, max?: number): number;
-export declare function randomHeader(): {
+export declare function randomHeader(snowTinyConfig: TSnowConfig): {
     headers: {
         'Cache-Control': string;
         'Content-Type': string;

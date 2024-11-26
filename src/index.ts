@@ -143,7 +143,10 @@ function assignTask(taskList: TFileItem[]) {
 					],
 				})
 
-				const totalRatio = ratio / succeedNum
+				/**
+				 * 除数不能为0
+				 */
+				const totalRatio = succeedNum === 0 ? 0 : ratio / succeedNum
 
 				spinner.succeed(
 					`压缩完成：\n 输出图片总大小：${chalk.red(

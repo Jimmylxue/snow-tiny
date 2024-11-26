@@ -1,10 +1,13 @@
 import Https from 'https'
 import Url from 'url'
-import { DataUploadType } from '../types'
+import { DataUploadType, TSnowConfig } from '../types'
 import { randomHeader } from '../utils/upload'
 
-export function upload(file: Buffer): Promise<DataUploadType> {
-	const header = randomHeader()
+export function upload(
+	file: Buffer,
+	snowTinyConfig: TSnowConfig
+): Promise<DataUploadType> {
+	const header = randomHeader(snowTinyConfig)
 	return new Promise((resolve, reject) => {
 		const req = Https.request(header, res => {
 			res.on('data', data => {

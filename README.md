@@ -40,7 +40,8 @@ yarn add snow-tiny
 	"output": "./temp",
 	"diffCompress": true,
 	"flat": true,
-	"saveOther": true
+	"saveOther": true,
+	"acceptPictureType": ["png", "jpg", "jpeg"]
 }
 ```
 
@@ -87,3 +88,21 @@ npm run compress
 是否将非图片资源也一起拷贝一份
 
 > 这个配置主要考虑到前端开发时，压缩结束后只需替换压缩文件夹和输出文件夹的文件名即可完成项目的图片替换。所以如果有需要可以打开。
+
+### acceptPictureType
+
+接收进行个图片压缩的文件类型
+
+> 默认压缩 `jpg`、`png`、`jpeg`，这三个文件类型，如需其他文件类型，可自行添加配置，注意需要是图片类型的文件即可。
+
+### hostname
+
+图片压缩请求的域名
+
+> 默认随机请求 tinyjpg.com、tinypng.com 非必要情况不改这个配置，除非官方修改了请求域名这块也对应处理即可。
+
+### uploadPath
+
+图片压缩请求的路径
+
+> 默认请求 /backend/opt/shrink 非必要情况不改这个配置，除非官方修改了请求域名这块也对应处理即可。

@@ -17,7 +17,7 @@ export function diffFile(
 	entry: string,
 	snowConfig: TSnowConfig
 ) {
-	const { diffCompress, include: includeFiles } = snowConfig
+	const { diffCompress, acceptPictureType: includeFiles } = snowConfig
 	spinner = Ora()
 	spinner.info(`正在搜索 「${chalk.blueBright(entry)}」 ......`)
 	obj.dirRoute = path

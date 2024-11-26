@@ -3,5 +3,8 @@
 	"output": "./newAssets",
 	"diffCompress": true,
 	"flat": true,
-	"saveOther": true
+	"saveOther": true,
+	"acceptPictureType":["png"],
+	"hostname":["tinyjpg.com", "tinypng.com"],
+	"uploadPath":"/backend/opt/shrink"
 }

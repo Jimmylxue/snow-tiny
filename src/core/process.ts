@@ -15,7 +15,7 @@ process.on(
 		snowTinyConfig: TSnowConfig
 	}) => {
 		;(async () => {
-			const data = tasks.map(task => compressImage(task))
+			const data = tasks.map(task => compressImage(task, snowTinyConfig))
 
 			const details = await Promise.all([...data.map(fn => fn())])
 
@@ -48,11 +48,10 @@ process.on(
 	}
 )
 
-function compressImage({
-	fullRoute,
-	outputRoute,
-	fileName,
-}: TFileItem): () => Promise<TDetail> {
+function compressImage(
+	{ fullRoute, outputRoute, fileName }: TFileItem,
+	snowTinyConfig: TSnowConfig
+): () => Promise<TDetail> {
 	return async () => {
 		const result: TDetail = {
 			input: 0,
@@ -68,7 +67,7 @@ function compressImage({
 			const start = +new Date()
 
 			// 上传
-			const dataUpload = await upload(result.file)
+			const dataUpload = await upload(result.file, snowTinyConfig)
 
 			// 下载
 			const dataDownload = await download(dataUpload.output.url)
