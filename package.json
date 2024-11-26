@@ -8,6 +8,11 @@
 	"bin": {
 		"snow": "./bin/index.js"
 	},
+	"config": {
+		"commitizen": {
+			"path": "@commitlint/cz-commitlint"
+		}
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc",
@@ -15,7 +20,10 @@
 		"dev": "node ./bin/index.js",
 		"build-d": "rollup -c",
 		"test-w": "jest --watch",
-		"release": "standard-version"
+		"release": "standard-version",
+		"prepare": "husky",
+		"validate-commit-msg": "validate-commit-msg",
+		"commit": "git-cz"
 	},
 	"keywords": [
 		"image",
@@ -39,6 +47,9 @@
 		"@babel/plugin-transform-runtime": "^7.18.9",
 		"@babel/preset-env": "^7.18.9",
 		"@babel/preset-typescript": "^7.18.6",
+		"@commitlint/cli": "^19.6.0",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@commitlint/cz-commitlint": "^19.5.0",
 		"@rollup/plugin-babel": "^5.3.1",
 		"@rollup/plugin-commonjs": "^22.0.1",
 		"@rollup/plugin-eslint": "^8.0.2",
@@ -48,7 +59,9 @@
 		"@types/jest": "^28.1.6",
 		"@typescript-eslint/eslint-plugin": "^5.30.7",
 		"@typescript-eslint/parser": "^5.30.7",
+		"commitizen": "^4.3.1",
 		"eslint": "^8.20.0",
+		"husky": "^9.1.7",
 		"jest-environment-jsdom": "^29.3.1",
 		"prettier": "^2.7.1",
 		"rollup": "^2.64.0",
